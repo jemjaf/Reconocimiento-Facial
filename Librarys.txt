@@ -1,0 +1,15 @@
+####Python 3.10.4
+
+#cv2 4.6.0.66
+pip install opencv-python
+
+#os 2.1.4
+pip install os-sys
+
+#imutils 0.5.4
+pip install imutils
+
+
+#numpy 1.23.4
+pip install numpy
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconocimiento</title>
+    <!-- iconos font-awesome -->
+    <script src="https://kit.fontawesome.com/9d0ecd6d4d.js" crossorigin="anonymous"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="img/logo.ico">
+
+</head>
+<body>
+    <div class="camera">
+        <h2>Reconocimiento Facial</h2>
+        <!-- Stream video via webcam -->
+        <div class="video-wrap">
+            <video id="video" playsinline autoplay></video>
+        </div>
+
+        <!-- Trigger canvas web API -->
+        <label for="reconocimiento">Reconociendo:</label>
+
+        <progress id="reconocimiento" max="1000" value="650">   </progress>
+        <label for="" id="mensaje"></label>
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/camera.js"></script>
+</body>
+</html>
