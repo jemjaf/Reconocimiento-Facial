@@ -14,7 +14,7 @@ faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontal
 #colors BGR
 blue, green, red, black = (255, 0, 0), (0,255,0), (0,0,255), (0,0,0)
 
-verificado, tiempo, maxTime, auth, color = 0, 0, 200, "", black
+verificado, tiempo, maxTime, auth, color, acumulado = 0, 0, 200, "", black, 0
 
 while True:
     ret, frame = cap.read()
@@ -38,6 +38,7 @@ while True:
                 cv2.putText(frame, '{}'.format(result[1]), (x,y-5), 1, 1.3, blue, 1, cv2.LINE_AA)
                 cv2.putText(frame, '{}'.format(Nombres[result[0]]), (x,y-25), 2, 1.1, blue, 1, cv2.LINE_AA)
                 cv2.rectangle(frame, (x,y), (x+w,y+h), blue, 2)
+                acumulado+=result[1]
                 verificado+=1
             else:
                 cv2.putText(frame, '{}'.format(result[1]), (x,y-5), 1, 1.3, red, 1, cv2.LINE_AA)
@@ -52,6 +53,9 @@ while True:
     cv2.imshow('Reconociendo', frame)
     k = cv2.waitKey(1)
     if k==27 or tiempo==maxTime+60: break
-        
+print("============================================")
+print("Margen de error promedio de predcción")
+print("============================================")
+print(acumulado/verificado)
 cap.release()
 cv2.destroyAllWindows()
